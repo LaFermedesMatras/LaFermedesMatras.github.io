@@ -204,7 +204,7 @@ body.produits h1 {
     .card {
         width: 66vw;           /* 2/3 de la largeur de l’écran */
         max-width: 300px;      /* limite maximale pour uniformité sur grands écrans */
-        aspect-ratio: 3 / 2;   /* assure la même hauteur pour toutes les cartes */
+        aspect-ratio: 2;   /* assure la même hauteur pour toutes les cartes */
         padding: 15px;         /* garde le padding actuel */
     }
 }
@@ -215,7 +215,7 @@ body.produits h1 {
     .card {
         width: 66vw;           /* reste 2/3 de l’écran */
         max-width: 220px;      /* limite sur très petit écran */
-        aspect-ratio: 3 / 2;   /* même hauteur pour toutes les cartes */
+        aspect-ratio: 2;   /* même hauteur pour toutes les cartes */
         padding: 12px;         /* garde ton padding existant */
     }
     .card p {
