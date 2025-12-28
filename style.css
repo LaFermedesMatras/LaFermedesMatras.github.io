@@ -1,52 +1,49 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
-}
-
+/* ===== Reset et base ===== */
 html, body {
-    height: 100%;
     margin: 0;
     padding: 0;
+    height: 100%;
     font-family: "Segoe UI", sans-serif;
+    box-sizing: border-box;
 }
 
-/* Section principale */
+/* ===== Hero section (page d'accueil) ===== */
 .hero {
-    height: 100vh;
+    position: relative;
+    height: 100vh;  
     background-image: url("images/002.jpg");
-    background-size: cover;
-    background-position: center;
+    background-size: cover;          
+    background-position: center;     
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 20px;
 }
 
-/* Filtre sombre pour lisibilité */
 .overlay {
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    color: white;
+    position: absolute;  
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.45);  
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 40px;
+    padding: 20px;  
 }
 
-.overlay h1 { font-size: 3.5rem; }
-.overlay p { font-size: 1.2rem; line-height: 1.6; }
-
-@media screen and (max-width: 768px) {
-    .overlay h1 { font-size: 2rem; }
-    .overlay p { font-size: 1rem; }
+.overlay h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
 }
 
-/* Bouton */
+.overlay p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 700px;
+}
+
 .btn {
     text-decoration: none;
     color: white;
@@ -59,4 +56,81 @@ html, body {
 .btn:hover {
     background: white;
     color: black;
+}
+
+/* ===== Produits - cartes ===== */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.card {
+    position: relative;
+    flex: 1 1 300px;
+    max-width: 350px;
+    background-color: rgba(255,255,255,0.85);  
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.card-bg::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.35); 
+    z-index: 0;
+    border-radius: 15px;
+}
+
+.card-bg h2, .card-bg p {
+    position: relative;
+    z-index: 1;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* ===== Responsive ===== */
+
+/* Tablettes et petits écrans */
+@media screen and (max-width: 1024px) {
+    .overlay h1 { font-size: 3rem; }
+    .overlay p { font-size: 1.1rem; margin-bottom: 25px; }
+}
+
+/* Smartphones */
+@media screen and (max-width: 768px) {
+    .overlay h1 { font-size: 2rem; margin-bottom: 15px; }
+    .overlay p { font-size: 1rem; margin-bottom: 20px; }
+    .btn { padding: 10px 25px; }
+
+    .cards { gap: 20px; }
+}
+
+/* Petits téléphones */
+@media screen and (max-width: 480px) {
+    .overlay h1 { font-size: 1.5rem; margin-bottom: 10px; }
+    .overlay p { font-size: 0.95rem; margin-bottom: 15px; }
+    .btn { padding: 8px 20px; font-size: 0.9rem; }
+
+    .cards { flex-direction: column; align-items: center; gap: 15px; }
+    .card { width: 90%; max-width: none; }
 }
