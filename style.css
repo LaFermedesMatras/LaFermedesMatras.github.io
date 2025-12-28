@@ -61,11 +61,69 @@ html, body {
     color: black;
 }
 
+/* ===== Responsive ===== */
+
+/* Tablettes et petits écrans */
+@media screen and (max-width: 1024px) {
+    .overlay h1 { font-size: 3rem; }
+    .overlay p { font-size: 1.1rem; margin-bottom: 25px; }
+}
+
+/* Smartphones */
+@media screen and (max-width: 768px) {
+    .overlay h1 { font-size: 2rem; margin-bottom: 15px; }
+    .overlay p { font-size: 1rem; margin-bottom: 20px; }
+    .btn { padding: 10px 25px; }
+}
+
+/* Petits téléphones */
+@media screen and (max-width: 480px) {
+    .overlay h1 { font-size: 1.5rem; margin-bottom: 10px; }
+    .overlay p { font-size: 0.95rem; margin-bottom: 15px; }
+    .btn { padding: 8px 20px; font-size: 0.9rem; }
+}
+
 /* ===== Produits - cartes ===== */
+/* --- Fond et overlay pour produits --- */
+body.produits {
+    position: relative;
+    min-height: 100vh;
+    background-image: url("images/fond-produits.jpg"); /* ton image de fond */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+}
+
+/* Overlay gris */
+body.produits::before {
+    content: "";
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.45);
+    z-index: 0;
+}
+
+/* Titre h1 blanc et responsive, ratio fixe avec texte */
+body.produits h1 {
+    position: relative;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    font-size: clamp(2rem, 4vw, 3rem); /* ajustable pour tous écrans */
+    margin-bottom: 40px;
+}
+
+/* --- Cartes --- */
 .cards {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; /* alignées sur desktop */
     gap: 30px;
     padding: 20px;
 }
@@ -74,13 +132,13 @@ html, body {
     position: relative;
     flex: 1 1 300px;
     max-width: 350px;
-    background-color: rgba(255,255,255,0.85);  
+    background-color: rgba(255,255,255,0.85);
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     text-align: center;
     padding: 20px;
     text-decoration: none;
-    color: inherit;
+    color: white; /* texte blanc sur overlay si image de fond */
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -95,15 +153,17 @@ html, body {
 .card-bg::before {
     content: "";
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.35); 
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.35);
     z-index: 0;
     border-radius: 15px;
 }
 
-.card-bg h2, .card-bg p {
+.card-bg h2,
+.card-bg p {
     position: relative;
     z-index: 1;
+    color: white;
 }
 
 .card:hover {
@@ -111,62 +171,32 @@ html, body {
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-/* ===== Responsive ===== */
-
-/* Tablettes et petits écrans */
-@media screen and (max-width: 1024px) {
-    .overlay h1 { font-size: 3rem; }
-    .overlay p { font-size: 1.1rem; margin-bottom: 25px; }
+.card h2 {
+    margin-bottom: 15px;
 }
 
-/* Smartphones */
-@media screen and (max-width: 768px) {
-    .overlay h1 { font-size: 2rem; margin-bottom: 15px; }
-    .overlay p { font-size: 1rem; margin-bottom: 20px; }
-    .btn { padding: 10px 25px; }
+.card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
 
-    .cards { gap: 20px; }
+/* --- Responsive --- */
+
+/* Tablette */
+@media screen and (max-width: 1024px) {
+    body.produits h1 { font-size: clamp(2rem, 5vw, 2.8rem); }
+}
+
+/* Smartphone */
+@media screen and (max-width: 768px) {
+    body.produits h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); }
+    .cards { flex-direction: column; align-items: center; gap: 20px; }
+    .card { width: 90%; max-width: none; }
 }
 
 /* Petits téléphones */
 @media screen and (max-width: 480px) {
-    .overlay h1 { font-size: 1.5rem; margin-bottom: 10px; }
-    .overlay p { font-size: 0.95rem; margin-bottom: 15px; }
-    .btn { padding: 8px 20px; font-size: 0.9rem; }
-
-    .cards { flex-direction: column; align-items: center; gap: 15px; }
-    .card { width: 90%; max-width: none; }
-}
-
-
-body.produits {
-    position: relative;
-    min-height: 100vh;
-    background-image: url("images/ferme.jpg"); /* mets l'image que tu veux */
-    background-size: cover;           /* couvre toute la page */
-    background-position: center;       /* centré */
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 60px;                 /* espace pour le titre */
-}
-
-/* Overlay semi-transparent pour lisibilité du titre */
-body.produits::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.45);   /* gris semi-transparent */
-    z-index: 0;
-}
-
-/* Titre h1 blanc et centré */
-body.produits h1 {
-    position: relative;       /* pour être au-dessus de l'overlay */
-    color: white;
-    text-align: center;
-    z-index: 1;
-    font-size: clamp(2rem, 4vw, 3rem); /* responsive comme pour le hero */
-    margin-bottom: 40px;
+    body.produits h1 { font-size: clamp(1.5rem, 6vw, 2rem); margin-bottom: 20px; }
+    .card { width: 95%; padding: 15px; }
+    .card p { font-size: 0.9rem; }
 }
