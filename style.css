@@ -133,8 +133,9 @@ body.produits h1 {
 
 .card {
     position: relative;
-    flex: 0 1 300px;     /* largeur flexible mais plus compacte */
-    max-width: 300px;    /* limite largeur pour que ce ne soit pas trop grand */
+    flex: 0 1 300px;   /* largeur flexible mais max 300px */
+    max-width: 300px;
+    aspect-ratio: 4 / 3; /* largeur / hauteur -> même taille pour toutes les cartes */
     background-color: rgba(255,255,255,0.85);
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -201,8 +202,10 @@ body.produits h1 {
         gap: 15px;
     }
     .card {
-        width: 90%;
-        max-width: 300px; /* limite la largeur pour rester uniforme */
+        width: 66vw;           /* 2/3 de la largeur de l’écran */
+        max-width: 300px;      /* limite maximale pour uniformité sur grands écrans */
+        aspect-ratio: 4 / 3;   /* assure la même hauteur pour toutes les cartes */
+        padding: 15px;         /* garde le padding actuel */
     }
 }
 
@@ -210,8 +213,10 @@ body.produits h1 {
 @media screen and (max-width: 480px) {
     body.produits h1 { font-size: clamp(1.5rem, 6vw, 2rem); margin-bottom: 20px; }
     .card {
-        width: 95%;
-        padding: 12px;
+        width: 66vw;           /* reste 2/3 de l’écran */
+        max-width: 220px;      /* limite sur très petit écran */
+        aspect-ratio: 4 / 3;   /* même hauteur pour toutes les cartes */
+        padding: 12px;         /* garde ton padding existant */
     }
     .card p {
         font-size: clamp(0.85rem, 3vw, 1rem);
