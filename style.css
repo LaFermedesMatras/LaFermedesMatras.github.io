@@ -104,7 +104,9 @@ body.produits {
 body.produits::before {
     content: "";
     position: absolute;
-    top:0; left:0; right:0; bottom:0;
+    top:0; left:0; right:0;
+    height: 100%; /* hauteur minimale */
+    min-height: 100vh;
     background: rgba(0,0,0,0.45);
     z-index: 0;
 }
@@ -121,13 +123,14 @@ body.produits h1 {
 
 /* --- Cartes --- */
 .cards {
-    position: relative;
-    z-index: 1;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* centré sur desktop et mobile */
+    justify-content: center;
+    align-items: flex-start;
     gap: 20px;
-    padding: 20px;
+    margin: 0 auto; /* centre globalement */
+    padding: 0;      /* plus de padding horizontal */
+    width: 100%;
 }
 
 .card {
@@ -195,13 +198,13 @@ body.produits h1 {
 @media screen and (max-width: 768px) {
     body.produits h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); }
     .cards {
-        flex-direction: column;  /* empile verticalement */
-        align-items: center;     /* centré horizontalement */
+        flex-direction: column;
+        align-items: center;
         gap: 15px;
     }
     .card {
         width: 90%;
-        max-width: none;
+        max-width: 300px; /* limite la largeur pour rester uniforme */
     }
 }
 
