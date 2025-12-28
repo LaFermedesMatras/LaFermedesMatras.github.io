@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Nos activités - La ferme des Violettes</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 40px 0 20px 0;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .card h2 {
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Découvrez nos activités</h1>
+
+    <div class="cards">
+        <a href="champignons.html" class="card">
+            <h2>Champignons</h2>
+            <p>
+                Nous cultivons différents champignons comestibles dans le respect du sol et de l'environnement.  
+                Goûtez la richesse des saveurs et soutenez notre démarche durable.
+            </p>
+        </a>
+
+        <a href="fruits-legumes.html" class="card">
+            <h2>Fruits & Légumes</h2>
+            <p>
+                Légumes et fruits cultivés sur sol vivant, selon les principes de l’agroécologie.  
+                Des produits de saison, sains et savoureux, issus d’un travail respectueux du sol.
+            </p>
+        </a>
+
+        <a href="pepiniere.html" class="card">
+            <h2>Pépiniériste</h2>
+            <p>
+                Plants et jeunes pousses soigneusement préparés pour vous, issus de nos pratiques durables.  
+                Idéal pour jardins, potagers ou plantations, tout en soutenant un mode de culture responsable.
+            </p>
+        </a>
+    </div>
+
+</body>
+</html>
