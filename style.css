@@ -103,10 +103,8 @@ body.produits {
 /* Overlay gris pour titre */
 body.produits::before {
     content: "";
-    position: absolute;
-    top:0; left:0; right:0;
-    height: 100%; /* hauteur minimale */
-    min-height: 100vh;
+    position: fixed;  /* overlay suit tout le fond */
+    top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(0,0,0,0.45);
     z-index: 0;
 }
