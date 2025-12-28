@@ -142,7 +142,7 @@ html, body {
 body.produits {
     position: relative;
     min-height: 100vh;
-    background-image: url("images/fond-produits.jpg"); /* mets l'image que tu veux */
+    background-image: url("images/ferme.jpg"); /* mets l'image que tu veux */
     background-size: cover;           /* couvre toute la page */
     background-position: center;       /* centré */
     background-repeat: no-repeat;
