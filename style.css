@@ -172,11 +172,12 @@ body.produits h1 {
 }
 
 .card h2 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
     margin-bottom: 15px;
 }
 
 .card p {
-    font-size: 0.95rem;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem); /* min 0.9rem, max 1.1rem, s’adapte à l’écran */
     line-height: 1.5;
 }
 
@@ -190,13 +191,38 @@ body.produits h1 {
 /* Smartphone */
 @media screen and (max-width: 768px) {
     body.produits h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); }
-    .cards { flex-direction: column; align-items: center; gap: 20px; }
-    .card { width: 90%; max-width: none; }
 }
 
 /* Petits téléphones */
 @media screen and (max-width: 480px) {
     body.produits h1 { font-size: clamp(1.5rem, 6vw, 2rem); margin-bottom: 20px; }
-    .card { width: 95%; padding: 15px; }
-    .card p { font-size: 0.9rem; }
+}
+
+/* Smartphones */
+@media screen and (max-width: 768px) {
+    .cards {
+        flex-direction: column;   /* empile les cartes */
+        align-items: center;
+        gap: 20px;
+    }
+    .card {
+        width: 90%;              /* prend presque toute la largeur de l’écran */
+        max-width: none;
+    }
+}
+
+/* Petits téléphones */
+@media screen and (max-width: 480px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .card {
+        width: 95%;
+        padding: 15px;
+    }
+    .card p {
+        font-size: clamp(0.85rem, 3vw, 1rem);
+    }
 }
