@@ -202,10 +202,10 @@ body.produits h1 {
         gap: 15px;
     }
     .card {
-        width: 66vw;           /* 2/3 de la largeur de l’écran */
-        max-width: 300px;      /* limite maximale pour uniformité sur grands écrans */
-        aspect-ratio: 2;   /* assure la même hauteur pour toutes les cartes */
-        padding: 15px;         /* garde le padding actuel */
+        width: 66vw;        /* 2/3 de l’écran */
+        max-width: 300px;
+        aspect-ratio: auto;  /* supprime l’espace vide */
+        padding: 15px;
     }
 }
 
@@ -213,10 +213,10 @@ body.produits h1 {
 @media screen and (max-width: 480px) {
     body.produits h1 { font-size: clamp(1.5rem, 6vw, 2rem); margin-bottom: 20px; }
     .card {
-        width: 66vw;           /* reste 2/3 de l’écran */
-        max-width: 220px;      /* limite sur très petit écran */
-        aspect-ratio: 2;   /* même hauteur pour toutes les cartes */
-        padding: 12px;         /* garde ton padding existant */
+        width: 66vw;
+        max-width: 220px;
+        aspect-ratio: auto;  /* hauteur adaptative au contenu */
+        padding: 12px;
     }
     .card p {
         font-size: clamp(0.85rem, 3vw, 1rem);
