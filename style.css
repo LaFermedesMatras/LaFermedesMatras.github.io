@@ -12,7 +12,7 @@ html, body {
     position: relative;
     height: 100vh;  
     background-image: url("images/002.jpg");
-    background-size: contain;          
+    background-size: cover;          
     background-position: center;     
     background-repeat: no-repeat;
     display: flex;
