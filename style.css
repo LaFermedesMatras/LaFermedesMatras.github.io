@@ -206,6 +206,8 @@ body.produits h1 {
         max-width: 300px;
         aspect-ratio: auto;  /* supprime l’espace vide */
         padding: 15px;
+        flex: none;          /* hauteur adaptative */
+        height: auto;        /* hauteur s’adapte au contenu */
     }
 }
 
@@ -217,6 +219,8 @@ body.produits h1 {
         max-width: 220px;
         aspect-ratio: auto;  /* hauteur adaptative au contenu */
         padding: 12px;
+        flex: none;          /* hauteur adaptative */
+        height: auto;        /* hauteur s’adapte au contenu */
     }
     .card p {
         font-size: clamp(0.85rem, 3vw, 1rem);
