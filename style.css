@@ -360,3 +360,50 @@ body.produits h1 {
         font-size: clamp(0.8rem, 4vw, 0.95rem);
     }
 }
+
+/* --- Page Contact full-screen --- */
+.contact-hero {
+    position: relative;
+    height: 100vh;                 /* plein écran */
+    background-size: cover;         /* image couvre tout l'écran */
+    background-position: center;    /* recentre l'image */
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-contact {
+    background: rgba(0,0,0,0.5);   /* overlay semi-transparent */
+    color: white;
+    text-align: center;
+    padding: 40px;
+    max-width: 600px;
+    margin: 0 20px;
+}
+
+.overlay-contact h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 20px;
+}
+
+.overlay-contact p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Responsive mobile */
+@media screen and (max-width: 768px) {
+    .overlay-contact {
+        padding: 30px 15px;
+    }
+
+    .overlay-contact h1 {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+
+    .overlay-contact p {
+        font-size: clamp(0.9rem, 3vw, 1rem);
+    }
+}
