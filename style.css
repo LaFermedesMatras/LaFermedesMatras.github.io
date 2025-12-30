@@ -518,29 +518,27 @@ body.produits {
 
 /* Mobile / tablette */
 @media screen and (max-width: 768px) {
-    /* sous-menu vertical, caché par défaut */
     .submenu-items {
-        display: none;         /* par défaut caché */
-        position: relative;    /* reste dans la case du parent */
-        top: auto;
-        left: auto;
-        background: none;      /* transparent pour voir le fond */
-        box-shadow: none;
-        border-radius: 0;
-        min-width: auto;
-        padding: 0;
+        display: flex;             /* déjà activé par JS au clic */
         flex-direction: column;
-        gap: 10px;
-    }
-
-    /* Affichage si le parent a la classe "open" */
-    .submenu.open .submenu-items {
-        display: flex;
+        align-items: stretch;      /* occupe tout l’espace horizontal */
+        gap: 8px;                  /* espacement entre sous-choix */
+        margin-top: 5px;           /* distance par rapport au menu principal */
+        padding: 10px;             /* padding intérieur */
+        background: rgba(255,255,255,0.95); /* fond différent du menu */
+        border-radius: 8px;        /* coins arrondis */
+        box-shadow: 0 3px 8px rgba(0,0,0,0.15); /* légère ombre */
     }
 
     .submenu-items li a {
-        padding: 10px 0;
-        font-size: 1rem;
+        padding: 10px 12px;
+        border-radius: 6px;
+        background: rgba(255,255,255,0.9);
         color: #333;
+        font-weight: 500;
+    }
+
+    .submenu-items li a:hover {
+        background: rgba(255,255,255,1);
     }
 }
