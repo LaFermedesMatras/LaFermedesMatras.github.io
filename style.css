@@ -330,6 +330,16 @@ body.produits {
     min-height: 100vh; /* permet de pousser la section en bas */
 }
 
+.contact {
+    margin-top: auto;        
+    padding: 20px 40px;
+    color: #ffffff !important;   /* texte vraiment blanc */
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    display: flex;
+    justify-content: flex-start;  /* aligné à gauche sur desktop */
+    gap: 40px;
+}
+
 /* Chaque élément de contact */
 .contact-item {
     margin: 0;
