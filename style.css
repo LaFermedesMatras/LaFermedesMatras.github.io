@@ -294,10 +294,12 @@ body.produits h1 {
 
 @media screen and (max-width: 768px) {
     .produit-full {
-        flex-direction: column; /* empile image puis texte */
+        flex-direction: column;  /* empile verticalement */
     }
 
+    /* Inverse l’ordre : image en haut, texte en dessous */
     .produit-image {
+        order: -1;
         min-height: 300px;
         width: 100%;
     }
