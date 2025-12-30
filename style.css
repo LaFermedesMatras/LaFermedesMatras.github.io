@@ -470,6 +470,11 @@ body.produits {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
+/* Affichage du menu principal si la classe show est active (mobile) */
+.menu-items.show {
+    display: block;
+}
+
 /* Liens principaux */
 .menu-items > li {
     position: relative;
