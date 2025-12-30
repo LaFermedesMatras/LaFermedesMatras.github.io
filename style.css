@@ -530,54 +530,48 @@ body.produits {
     }
 
     /* --- Sous-menu intégré sous "Nos produits" --- */
+    /* Sous-menu intégré sous le choix principal */
     .submenu-items {
-        display: none;           /* caché par défaut, activé par JS */
-        position: static;        /* intégré dans le flux du menu */
-        margin: 6px auto;        /* centre horizontalement */
-        width: 90%;              /* largeur des sous-choix */
-        max-width: 300px;        /* limite largeur */
-        padding: 0 8px;          /* padding pour slide-down */
-        background: rgba(0,0,0,0.04); /* fond doux */
-        border-radius: 6px;
-        box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+        display: none;
+        position: relative;
+        margin-top: 6px;
+        padding: 8px 0;
+        background: transparent;        /* pas de fond pour le conteneur */
         flex-direction: column;
-        gap: 8px;               /* espace entre les items */
-        overflow: hidden;
-        max-height: 0;          /* pour animation slide-down */
-        opacity: 0;
-        transition: 
-            max-height 0.35s ease, 
-            opacity 0.25s ease, 
-            padding 0.25s ease;
-        align-items: center;
+        align-items: center;            /* centre horizontalement les cases */
+        gap: 6px;
     }
 
-    /* visible uniquement quand ouvert */
+    /* Visible uniquement quand ouvert */
     .submenu.open .submenu-items {
         display: flex;
-        max-height: 500px;      /* largement suffisant pour tous les items */
+        max-height: 500px;
         opacity: 1;
-        padding: 8px;           /* padding normal lors de l’ouverture */
+        transition: max-height 0.35s ease, opacity 0.25s ease;
     }
 
-    /* --- Liens des sous-choix --- */
+    /* Chaque sous-choix */
     .submenu-items li a {
-        width: 100%;
+        width: 85%;                     /* largeur fixe relative à menu */
+        max-width: 180px;               /* optionnel : max width */
+        min-width: 140px;               /* optionnel : min width */
         padding: 10px 12px;
-        background: rgba(255,255,255,0.95);
-        border-radius: 6px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        background: white;              /* case blanche */
+        border-radius: 5px;
         font-size: 0.95rem;
-        text-align: center;
-        transition: background 0.2s, transform 0.2s;
+        text-align: left;               /* texte aligné à gauche */
+        display: flex;
+        align-items: center;            /* texte verticalement centré */
+        justify-content: flex-start;    /* texte aligné à gauche */
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
 
+    /* Hover / interaction */
     .submenu-items li a:hover {
-        background: rgba(255,255,255,1);
-        transform: translateY(-1px);
+        background: rgba(255,255,255,0.95);
     }
 
-    /* --- Chevron pour animation --- */
+    /* Chevron */
     .submenu > a {
         display: flex;
         justify-content: space-between;
