@@ -532,41 +532,34 @@ body.produits {
     /* --- Sous-menu intégré sous "Nos produits" --- */
     /* Sous-menu intégré sous le choix principal */
     .submenu-items {
-        display: none;
-        position: relative;
+        display: none;            /* caché par défaut */
+        position: static;         /* reste dans le flux du menu Nos produits */
         margin-top: 6px;
-        padding: 8px 0;
-        background: transparent;        /* pas de fond pour le conteneur */
+        padding: 8px;
+        background: rgba(0,0,0,0.04);
+        border-radius: 6px;
+        box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
         flex-direction: column;
-        align-items: center;            /* centre horizontalement les cases */
+        align-items: center;      /* centre les cases horizontalement */
         gap: 6px;
     }
 
-    /* Visible uniquement quand ouvert */
     .submenu.open .submenu-items {
         display: flex;
-        max-height: 500px;
-        opacity: 1;
-        transition: max-height 0.35s ease, opacity 0.25s ease;
     }
 
     /* Chaque sous-choix */
     .submenu-items li a {
-        width: 85%;                     /* largeur fixe relative à menu */
-        max-width: 180px;               /* optionnel : max width */
-        min-width: 140px;               /* optionnel : min width */
-        padding: 10px 12px;
-        background: white;              /* case blanche */
+        width: 140px;             /* largeur fixe */
+        max-width: 80%;           /* ne dépasse pas l’écran */
+        padding: 8px 10px;
+        background: white;
         border-radius: 5px;
         font-size: 0.95rem;
-        text-align: left;               /* texte aligné à gauche */
-        display: flex;
-        align-items: center;            /* texte verticalement centré */
-        justify-content: flex-start;    /* texte aligné à gauche */
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        text-align: left;         /* texte aligné à gauche */
+        display: block;           /* chaque case reste sur sa ligne */
     }
 
-    /* Hover / interaction */
     .submenu-items li a:hover {
         background: rgba(255,255,255,0.95);
     }
