@@ -487,7 +487,7 @@ body.produits {
     background: rgba(0,0,0,0.05);
 }
 
-/* Sous-menu */
+/* Sous-menu (desktop) */
 .submenu-items {
     display: none;
     position: absolute;
@@ -511,16 +511,31 @@ body.produits {
     display: block;
 }
 
-/* Responsive / Mobile : menu ouvert par clic */
-.menu-items.show {
-    display: block;
-}
-
-/* Mobile adjustments */
+/* --- Responsive / Mobile --- */
 @media screen and (max-width: 768px) {
+    /* sous-menu vertical, caché par défaut */
     .submenu-items {
-        position: relative;
-        left: 0;
+        display: none;         /* par défaut caché */
+        position: relative;    /* position normale dans le flux */
+        top: auto;
+        left: auto;
+        background: none;      /* transparent pour voir le fond */
         box-shadow: none;
+        border-radius: 0;
+        min-width: auto;
+        padding: 0;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Affichage si le parent a la classe "open" */
+    .submenu.open .submenu-items {
+        display: flex;
+    }
+
+    .submenu-items li a {
+        padding: 10px 0;
+        font-size: 1rem;
+        color: #333; /* ou la couleur que tu veux pour le texte sur mobile */
     }
 }
