@@ -321,3 +321,42 @@ body.produits h1 {
         font-size: clamp(0.9rem, 3vw, 1rem);
     }
 }
+
+
+/* --- Section Contact --- */
+.contact {
+    background: #333;           /* fond sombre */
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 2px solid #555;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Titre de la section contact */
+.contact h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem); /* plus petit que titre des boutons */
+    margin-bottom: 20px;
+}
+
+/* Texte de contact */
+.contact p {
+    font-size: clamp(0.9rem, 2.2vw, 1rem); /* plus petit que texte boutons */
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Responsive - petits écrans */
+@media screen and (max-width: 480px) {
+    .contact {
+        padding: 30px 15px;
+    }
+
+    .contact h2 {
+        font-size: clamp(1.2rem, 5vw, 1.5rem);
+    }
+
+    .contact p {
+        font-size: clamp(0.8rem, 4vw, 0.95rem);
+    }
+}
