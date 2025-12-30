@@ -516,21 +516,21 @@ body.produits {
     display: block;
 }
 
-/* --- Responsive / Mobile --- */
+/* Mobile / tablette */
 @media screen and (max-width: 768px) {
-    /* sous-menu vertical, caché par défaut */
     .submenu-items {
-        display: none;         /* par défaut caché */
-        position: relative;    /* position normale dans le flux */
-        top: auto;
-        left: auto;
-        background: none;      /* transparent pour voir le fond */
-        box-shadow: none;
-        border-radius: 0;
-        min-width: auto;
-        padding: 0;
+        display: none;          /* caché par défaut */
+        position: absolute;     /* position absolue pour le décalage */
+        top: 0;
+        left: -180px;           /* aligne à gauche du parent comme sur desktop */
+        background: rgba(255,255,255,0.95);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        border-radius: 5px;
+        padding: 10px 0;
         flex-direction: column;
         gap: 10px;
+        min-width: 180px;
+        z-index: 999;           /* pour être au-dessus des autres éléments */
     }
 
     /* Affichage si le parent a la classe "open" */
@@ -539,8 +539,8 @@ body.produits {
     }
 
     .submenu-items li a {
-        padding: 10px 0;
+        padding: 10px 15px;
         font-size: 1rem;
-        color: #333; /* ou la couleur que tu veux pour le texte sur mobile */
+        color: #333;
     }
 }
