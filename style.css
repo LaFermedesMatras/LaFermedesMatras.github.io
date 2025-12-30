@@ -518,27 +518,29 @@ body.produits {
 
 /* Mobile / tablette */
 @media screen and (max-width: 768px) {
+    /* sous-menu vertical, caché par défaut */
     .submenu-items {
-        display: none;               /* caché par défaut */
-        position: relative;          /* reste dans le flux pour ne pas couvrir les autres éléments */
-        margin-left: 15px;           /* léger décalage pour hiérarchie visuelle */
-        background: rgba(255,255,255,0.95);
-        border-radius: 5px;
-        padding: 10px 0;
+        display: none;         /* par défaut caché */
+        position: relative;    /* reste dans la case du parent */
+        top: auto;
+        left: auto;
+        background: none;      /* transparent pour voir le fond */
+        box-shadow: none;
+        border-radius: 0;
+        min-width: auto;
+        padding: 0;
         flex-direction: column;
         gap: 10px;
-        max-width: calc(100% - 30px); /* largeur adaptable à l’écran */
-        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     }
 
+    /* Affichage si le parent a la classe "open" */
     .submenu.open .submenu-items {
         display: flex;
     }
 
     .submenu-items li a {
-        padding: 10px 15px;
+        padding: 10px 0;
         font-size: 1rem;
         color: #333;
-        white-space: normal; /* texte multi-lignes si nécessaire */
     }
 }
