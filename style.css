@@ -519,33 +519,36 @@ body.produits {
 /* Mobile / tablette */
 @media screen and (max-width: 768px) {
 
-    /* caché par défaut */
-    .submenu-items {
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
-        margin-top: 8px;
-        padding: 10px;
-        background: rgba(255,255,255,0.95);
-        border-radius: 8px;
-        box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    /* Le menu principal devient un bloc normal */
+    .menu-items {
+        position: relative;
+        right: auto;
+        top: auto;
     }
 
-    /* visible UNIQUEMENT quand ouvert */
+    /* Sous-menu intégré dans la carte */
+    .submenu-items {
+        display: none;
+        position: static;            /* 🔑 clé du problème */
+        margin-top: 6px;
+        margin-left: 10px;           /* léger retrait visuel */
+        padding: 8px;
+        background: rgba(0,0,0,0.04); /* fond doux, intégré */
+        border-radius: 6px;
+        box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+    }
+
+    /* visible uniquement quand ouvert */
     .submenu.open .submenu-items {
         display: flex;
+        flex-direction: column;
+        gap: 6px;
     }
 
     .submenu-items li a {
-        padding: 10px 12px;
-        border-radius: 6px;
-        background: rgba(255,255,255,0.9);
-        color: #333;
-        font-weight: 500;
-    }
-
-    .submenu-items li a:hover {
-        background: rgba(255,255,255,1);
+        padding: 8px 10px;
+        background: white;
+        border-radius: 5px;
+        font-size: 0.95rem;
     }
 }
