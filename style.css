@@ -521,9 +521,9 @@ body.produits {
 
     /* Le menu principal devient un bloc normal */
     .menu-items {
-        position: relative;
-        right: auto;
-        top: auto;
+        position: absolute;   /* 🔑 reste hors du flux */
+        top: 100%;
+        right: 0;
     }
 
     /* Sous-menu intégré dans la carte */
