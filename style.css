@@ -338,6 +338,8 @@ body.produits {
     display: flex;
     justify-content: flex-start;  /* aligné à gauche sur desktop */
     gap: 40px;
+    background: rgba(0, 0, 0, 0.2); /* léger fond sombre derrière texte */
+    border-radius: 5px;
 }
 
 /* Chaque élément de contact */
@@ -357,6 +359,8 @@ body.produits {
         padding: 15px 20px;
         text-align: center;
         color: #ffffff !important; /* texte vraiment blanc */
+        background: rgba(0, 0, 0, 0.2); /* léger fond sombre derrière texte */
+        border-radius: 5px;
     }
 
     .contact-item {
