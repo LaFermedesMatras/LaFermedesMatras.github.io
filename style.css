@@ -438,20 +438,20 @@ body.produits {
 
 /* Icône hamburger */
 .hamburger-icon {
-    width: 35px;
-    height: 25px;
+    width: clamp(25px, 8vw, 35px);   /* largeur adaptative */
+    height: clamp(20px, 6vw, 25px);  /* hauteur adaptative */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
     background: rgba(255,255,255,0.8);
-    padding: 8px;
+    padding: clamp(5px, 1.5vw, 8px); /* padding adaptatif */
     border-radius: 5px;
 }
 
 .hamburger-icon span {
     display: block;
-    height: 3px;
+    height: clamp(2px, 0.5vw, 3px);   /* hauteur des traits responsive */
     background: #555;
     border-radius: 2px;
 }
