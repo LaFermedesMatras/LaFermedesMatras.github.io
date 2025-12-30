@@ -370,50 +370,48 @@ body.produits {
     }
 }
 
-/* --- Page Contact full-screen --- */
-.contact-hero {
-    position: relative;
-    height: 100vh;                 /* plein écran */
-    background-size: cover;         /* image couvre tout l'écran */
-    background-position: center;    /* recentre l'image */
-    background-repeat: no-repeat;
+/* --- Contact Page --- */
+.contact-page .contact-hero {
+    height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; /* centrage vertical */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.overlay-contact {
-    background: rgba(0,0,0,0.5);   /* overlay semi-transparent */
-    color: white;
+.contact-page .overlay-contact {
     text-align: center;
-    padding: 40px;
-    max-width: 600px;
-    margin: 0 20px;
+    background: rgba(0,0,0,0.3); /* léger overlay pour lisibilité */
+    padding: 40px 20px;
+    border-radius: 10px;
+    color: #ffffff; /* texte blanc pur */
 }
 
-.overlay-contact h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
+/* Titre et texte adaptatif */
+.contact-page .overlay-contact h1 {
+    font-size: clamp(2rem, 5vw, 3rem); /* titre adaptatif */
     margin-bottom: 20px;
 }
 
-.overlay-contact p {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    line-height: 1.6;
-    margin-bottom: 15px;
+.contact-page .overlay-contact p.contact-item {
+    font-size: clamp(1rem, 3vw, 1.5rem); /* texte adaptatif */
+    margin: 5px 0;
 }
 
-/* Responsive mobile */
+/* Mobile / smartphone */
 @media screen and (max-width: 768px) {
-    .overlay-contact {
+    .contact-page .overlay-contact {
         padding: 30px 15px;
     }
 
-    .overlay-contact h1 {
-        font-size: clamp(1.5rem, 6vw, 2rem);
+    .contact-page .overlay-contact h1 {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
     }
 
-    .overlay-contact p {
-        font-size: clamp(0.9rem, 3vw, 1rem);
+    .contact-page .overlay-contact p.contact-item {
+        font-size: clamp(0.85rem, 4vw, 1.2rem);
     }
 }
 
