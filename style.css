@@ -519,22 +519,18 @@ body.produits {
 /* Mobile / tablette */
 @media screen and (max-width: 768px) {
     .submenu-items {
-        display: none;              /* caché par défaut */
-        position: absolute;         /* pour pouvoir décaler */
-        top: 100%;                  /* juste en dessous du bouton parent */
-        left: 10px;                 /* léger décalage à gauche pour lisibilité */
-        right: 10px;                /* empêche de dépasser à droite */
+        display: none;               /* caché par défaut */
+        position: relative;          /* reste dans le flux pour ne pas couvrir les autres éléments */
+        margin-left: 15px;           /* léger décalage pour hiérarchie visuelle */
         background: rgba(255,255,255,0.95);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         border-radius: 5px;
         padding: 10px 0;
         flex-direction: column;
         gap: 10px;
-        z-index: 999;               /* toujours au-dessus du contenu */
-        max-width: calc(100% - 20px); /* s’adapte à la largeur de l’écran */
+        max-width: calc(100% - 30px); /* largeur adaptable à l’écran */
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     }
 
-    /* Affichage si le parent a la classe "open" */
     .submenu.open .submenu-items {
         display: flex;
     }
