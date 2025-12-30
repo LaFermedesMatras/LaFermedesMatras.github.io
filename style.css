@@ -324,27 +324,36 @@ body.produits h1 {
 
 
 /* --- Section Contact Produits --- */
+/* --- Section Contact Produits --- */
 body.produits {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* permet de pousser la section en bas */
+    min-height: 100vh; /* pousse la section en bas */
 }
 
 .contact {
     margin-top: auto;        
     padding: 20px 40px;
-    color: #ffffff !important;   /* texte vraiment blanc */
+    color: #ffffff !important;   /* texte blanc pur */
     font-size: clamp(0.9rem, 1.2vw, 1rem);
     display: flex;
     justify-content: flex-start;  /* aligné à gauche sur desktop */
     gap: 40px;
+
+    /* Ajout pour être sûr que le texte soit au-dessus de l'overlay */
+    position: relative;
+    z-index: 10;
+
+    /* Supprimer le fond et le border-radius */
+    /* background: rgba(0,0,0,0.2); */
+    /* border-radius: 5px; */
 }
 
 /* Chaque élément de contact */
 .contact-item {
     margin: 0;
     white-space: nowrap;
-    color: #ffffff !important;   /* texte vraiment blanc */
+    color: #ffffff !important;   /* texte blanc pur */
 }
 
 /* Mobile / smartphone */
@@ -356,13 +365,19 @@ body.produits {
         gap: 15px;
         padding: 15px 20px;
         text-align: center;
-        color: #ffffff !important; /* texte vraiment blanc */
+        color: #ffffff !important; /* texte blanc pur */
+        position: relative;
+        z-index: 10;
+
+        /* Supprimer le fond et border-radius */
+        /* background: rgba(0,0,0,0.2); */
+        /* border-radius: 5px; */
     }
 
     .contact-item {
         white-space: normal;
         font-size: clamp(0.85rem, 3vw, 0.95rem);
-        color: #ffffff !important; /* texte vraiment blanc */
+        color: #ffffff !important; /* texte blanc pur */
     }
 }
 
