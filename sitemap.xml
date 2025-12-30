@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Page d'accueil -->
+    <url>
+        <loc>https://lafermedesmatras.github.io/</loc>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Page produits -->
+    <url>
+        <loc>https://lafermedesmatras.github.io/produits.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Page contact -->
+    <url>
+        <loc>https://lafermedesmatras.github.io/contact.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Ajoute d'autres pages ici -->
+</urlset>
