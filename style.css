@@ -552,3 +552,38 @@ body.produits {
         font-size: 0.95rem;
     }
 }
+
+
+
+@media screen and (max-width: 768px) {
+
+    .submenu-items {
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: 
+            max-height 0.35s ease,
+            opacity 0.25s ease;
+    }
+
+    .submenu.open .submenu-items {
+        max-height: 500px; /* largement suffisant */
+        opacity: 1;
+    }
+
+    /* Chevron */
+    .submenu > a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .chevron {
+        font-size: 0.8rem;
+        transition: transform 0.3s ease;
+    }
+
+    .submenu.open .chevron {
+        transform: rotate(180deg);
+    }
+}
