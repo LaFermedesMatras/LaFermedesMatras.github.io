@@ -330,36 +330,29 @@ body.produits {
     min-height: 100vh; /* permet de pousser la section en bas */
 }
 
-.contact {
-    margin-top: auto;        /* pousse la section en bas */
-    padding: 20px 40px;
-    color: white;
-    font-size: clamp(0.9rem, 1.2vw, 1rem); /* plus petit que boutons */
-    display: flex;
-    justify-content: flex-start;  /* aligné à gauche sur desktop */
-    gap: 40px;
-}
-
 /* Chaque élément de contact */
 .contact-item {
     margin: 0;
-    white-space: nowrap;       /* reste sur la même ligne si possible */
+    white-space: nowrap;
+    color: #ffffff !important;   /* texte vraiment blanc */
 }
 
 /* Mobile / smartphone */
 @media screen and (max-width: 768px) {
     .contact {
-        flex-direction: column;    /* chaque info à la ligne */
-        justify-content: flex-end; /* reste en bas de la page */
+        flex-direction: column;
+        justify-content: flex-end; /* reste en bas */
         align-items: center;       /* centré horizontalement */
         gap: 15px;
         padding: 15px 20px;
         text-align: center;
+        color: #ffffff !important; /* texte vraiment blanc */
     }
 
     .contact-item {
-        white-space: normal;       /* chaque info à la ligne */
+        white-space: normal;
         font-size: clamp(0.85rem, 3vw, 0.95rem);
+        color: #ffffff !important; /* texte vraiment blanc */
     }
 }
 
