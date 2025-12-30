@@ -444,16 +444,18 @@ body.produits {
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
-    background: rgba(255,255,255,0.8);
+    background: url('images/NOUVEAU-LOGO-MATRASmodif.jpeg') center/cover no-repeat; /* image de fond semi-transparente */
     padding: clamp(5px, 1.5vw, 8px); /* padding adaptatif */
     border-radius: 5px;
+    position: relative; /* pour s'assurer que les spans restent au-dessus */
 }
 
 .hamburger-icon span {
     display: block;
     height: clamp(2px, 0.5vw, 3px);   /* hauteur des traits responsive */
-    background: #555;
+    background: #555;                  /* traits visibles sur l'image */
     border-radius: 2px;
+    z-index: 2;                        /* s'assure que les traits restent au-dessus */
 }
 
 /* Menu principal */
